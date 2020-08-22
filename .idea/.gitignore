@@ -8,4 +8,5 @@
 /httpRequests/
 
 /email_info/EmailInfo.py
+/email_package/EmailCreds.py
 

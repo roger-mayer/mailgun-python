@@ -4,12 +4,17 @@ import os
 # import smtp library module
 import smtplib
 import imghdr
-
+import EmailCreds
 # from email.message import EmailMessage
 
-EMAIL_ADD = os.environ.get('EMAIL_ADDRESS')
-EMAIL_PASS = os.environ.get('EMAIL_PASSWORD')
+# EMAIL_ADD = os.environ.get('EMAIL_ADDRESS')
+# EMAIL_PASS = os.environ.get('EMAIL_PASSWORD')
 
+
+EMAIL_ADD = EmailCreds.EMAIL_ADD
+EMAIL_PASS = EmailCreds.EMAIL_PASS
+print(EMAIL_ADD)
+print(EMAIL_PASS)
 
 
 with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
