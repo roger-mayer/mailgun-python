@@ -1,18 +1,33 @@
 # import OS for private info in my mac
 import os
 
-
+# import smtp library module
 import smtplib
 import imghdr
-from email.message import EmailMessage
 
-EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')
+# from email.message import EmailMessage
 
-EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_ADD = os.environ.get('EMAIL_ADDRESS')
+EMAIL_PASS = os.environ.get('EMAIL_PASSWORD')
 
-print("test")
-print(EMAIL_ADDRESS)
 
+
+with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+    # identify as encripted connection
+    smtp.ehlo()
+    # encript traffic
+    smtp.starttls()
+    # reidentify self as encripted package
+    smtp.ehlo()
+
+    smtp.login(EMAIL_ADD, EMAIL_PASS)
+
+    subject = 'I sent this with python'
+    body = 'This is a plain text email'
+
+    msg = f'Subject: {subject}\n\n{body}'
+
+    smtp.sendmail(EMAIL_ADD, 'rmayer1984@gmail.com', msg)
 #
 # contacts = ['rmayer1984@gmail.com', 'rmayer1984@gmail.com']
 #

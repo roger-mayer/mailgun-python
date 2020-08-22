@@ -7,5 +7,5 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 
-/email-package/EmailInfo.py
+/email_package/EmailInfo.py
 
