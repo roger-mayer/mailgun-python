@@ -25,7 +25,7 @@ for ToEmail in TO_EMAILS:
     msg['Subject'] = 'Interview Followup'
     msg['From'] = EMAIL_ADD
     msg['To'] = ToEmail
-    msg.set_content('Hi! How are you!')
+    msg.set_content('Hi! How are you! Let me know if you see this message. I meant to send HTML')
 
     files = ['RMayerResumeMG.jpeg',
             'RogerImg.jpeg',
