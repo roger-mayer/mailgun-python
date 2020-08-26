@@ -22,14 +22,15 @@ print(EMAIL_ADD)
 
 for ToEmail in TO_EMAILS:
     msg = EmailMessage()
-    msg['Subject'] = 'I sent this with python'
+    msg['Subject'] = 'Interview Followup'
     msg['From'] = EMAIL_ADD
     msg['To'] = ToEmail
     msg.set_content('Hi! How are you!')
 
-    files = ['RogerImg.jpeg',
-             # 'GeekdomSticker.jpeg',
-             'RogerMayerRes.jpeg']
+    files = ['RMayerResumeMG.jpeg',
+            'RogerImg.jpeg',
+             'GeekdomSticker.jpeg',
+             ]
 
     # for html
     msg.add_alternative("""\
@@ -53,11 +54,13 @@ for ToEmail in TO_EMAILS:
             <body>
                 <div class="container">
                     <div>
-                    <h2>Hello, I sent this email using Python and simple HTML.</h2>
-                    <h4>Below are several links including to the projects I would like to talk about with the Devs!</h4> 
+                    <h2>Hey Josh! This email was made using Python and simple HTML.</h2>
+                    <h4>Below are several links including to the projects I would love to talk about with the Devs!</h4> 
+                    <h4>(I've also attached my resume and several random photos which are part of my code demonstration)</h4>
+                    <h4>-Roger </h4>
                     </div>
                     <div class="card">
-                    <h4><a href="https://github.com/roger-mayer?tab=projects" target="_blank">Mailgun Python Projects</a></h4>
+                    <h4><a href="https://github.com/roger-mayer?tab=projects" target="_blank">Mailgun Projects</a></h4>
                     <h4><a href="https://github.com/roger-mayer" target="_blank">GitHub</a></h4>
                     <h4><a href="https://www.linkedin.com/in/roger-mayer/" target="_blank">LinkedIn</a></h4>
                     <h4><a href="mailto: rmayer1984@gmail.com" target="_blank">Send Me An Email!</a></h4>
