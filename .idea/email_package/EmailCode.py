@@ -27,12 +27,15 @@ for ToEmail in TO_EMAILS:
     msg['To'] = ToEmail
     msg.set_content('Hi! How are you!')
 
-    files = ['RogerImg.jpeg', 'GeekdomSticker.jpeg', 'RogerMayerRes.jpeg']
+    files = ['RogerImg.jpeg',
+             # 'GeekdomSticker.jpeg',
+             'RogerMayerRes.jpeg']
 
     # for html
     msg.add_alternative("""\
     <!DOCTYPE HTML>
     <head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
         <style>
             .container {
             padding: 1em;
@@ -42,22 +45,25 @@ for ToEmail in TO_EMAILS:
             h2 {
             color:Red;
             border-bottom: 1px solid black;
+            text-align: center;
             }
         </style>
     </head>
         <html>
             <body>
-            <div class="container">
-                <div>
-                <h2> HTML Rulez DOOd</h2>
+                <div class="container">
+                    <div>
+                    <h2>Hello, I sent this email using Python and simple HTML.</h2>
+                    <h4>Below are several links including to the projects I would like to talk about with the Devs!</h4> 
+                    </div>
+                    <div class="card">
+                    <h4><a href="https://github.com/roger-mayer?tab=projects" target="_blank">Mailgun Python Projects</a></h4>
+                    <h4><a href="https://github.com/roger-mayer" target="_blank">GitHub</a></h4>
+                    <h4><a href="https://www.linkedin.com/in/roger-mayer/" target="_blank">LinkedIn</a></h4>
+                    <h4><a href="mailto: rmayer1984@gmail.com" target="_blank">Send Me An Email!</a></h4>
+                    </div>
                 </div>
-                
-                <div>
-                <h4><a href="https://github.com/roger-mayer" target="_blank">GitHub</a></h4>
-                <h4><a href="https://www.linkedin.com/in/roger-mayer/" target="_blank">Linked In</a></h4>
-                <h4><a href="mailto: rmayer1984@gmail.com" target="_blank">Send Email</a></h4>
-                </div>
-            </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
             </body>
         </html>
     """, subtype='html')
